@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'increase-button',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./increase-button.component.scss']
 })
 export class IncreaseButtonComponent implements OnInit {
+  @Output() increaseClick = new EventEmitter();
 
   constructor(
   ) { }
@@ -13,4 +14,7 @@ export class IncreaseButtonComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onClick(){
+    this.increaseClick.emit();
+  }
 }

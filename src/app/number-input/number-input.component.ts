@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'number-input',
@@ -6,13 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./number-input.component.scss']
 })
 export class NumberInputComponent implements OnInit {
-
+  @Input() valueToDisplay : number;
   Minimum : number = 0;
   Maximum : number = 20;
-  Step : number = 1;
+  Step : number = 2;
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }

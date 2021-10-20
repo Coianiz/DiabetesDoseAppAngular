@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'decrease-button',
@@ -6,11 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./decrease-button.component.scss']
 })
 export class DecreaseButtonComponent implements OnInit {
-
+  @Output() decreaseClick = new EventEmitter;
   constructor(
   ) { }
 
   ngOnInit(): void {
   }
 
+  onClick(){
+    this.decreaseClick.emit();
+  }
 }
